@@ -224,8 +224,14 @@
     function buildHierarchy (basePath, structure) {
       var result = {
         path: basePath,
+        name: basePath.split('/').pop(),
         children: []
       };
+
+      if (!structure) {
+        // Handle null or undefined
+        return result;
+      }
 
       if (Array.isArray(structure)) {
         // Simple array of subdirectories/files
@@ -235,12 +241,14 @@
             name: item
           });
         });
-      } else if (typeof structure === 'object') {
+      } else if (typeof structure === 'object' && structure !== null) {
         // Nested structure
         for (var key in structure) {
           if (structure.hasOwnProperty(key)) {
             var childPath = basePath + '/' + normalizeDirectoryName(key);
-            result.children.push(buildHierarchy(childPath, structure[key]));
+            var childHierarchy = buildHierarchy(childPath, structure[key]);
+            childHierarchy.name = key;
+            result.children.push(childHierarchy);
           }
         }
       }
