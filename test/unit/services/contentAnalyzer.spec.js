@@ -77,6 +77,22 @@
         expect(result.category).to.equal('business');
       });
 
+      it('should classify medical documents', function () {
+        var content = 'Patient clinical records and medical healthcare diagnosis treatment for pharmacy imaging HL7 FHIR interfaces.';
+        var result = contentAnalyzer.classifyDocument(content);
+
+        expect(result.category).to.equal('medical');
+        expect(result.scores.medical).to.be.above(0);
+      });
+
+      it('should classify infrastructure documents', function () {
+        var content = 'Deployment infrastructure server network virtualization VMware cloud Docker container architecture desktop endpoint.';
+        var result = contentAnalyzer.classifyDocument(content);
+
+        expect(result.category).to.equal('infrastructure');
+        expect(result.scores.infrastructure).to.be.above(0);
+      });
+
       it('should return general for ambiguous content', function () {
         var content = 'The quick brown fox jumps over the lazy dog.';
         var result = contentAnalyzer.classifyDocument(content);

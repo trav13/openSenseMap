@@ -35,7 +35,8 @@ Responsible for analyzing document content and extracting metadata.
 Manages directory structures and path generation.
 
 **Methods:**
-- `createDirectoryStructure(category, options)` - Create directory hierarchy
+- `createDirectoryStructure(category, options)` - Create basic directory hierarchy
+- `createDetailedStructure(category, subcategory, options)` - Create detailed hierarchical structure with nested subdirectories
 - `validatePath(path)` - Validate file system paths
 - `generatePath(documentMetadata)` - Generate path from metadata
 - `normalizeDirectoryName(name)` - Sanitize directory names
@@ -136,7 +137,9 @@ The system classifies documents into the following categories:
 4. **Legal** - Contracts, agreements, compliance, regulations
 5. **Educational** - Courses, tutorials, guides, lessons, instructions
 6. **Sensor** - Sensor data, measurements, senseBox, openSenseMap
-7. **General** - Uncategorized or ambiguous content
+7. **Medical** - Healthcare, clinical workflows, patient records, medical applications, HL7/FHIR interfaces, pharmacy systems, imaging (PACS/RIS), regulatory compliance
+8. **Infrastructure** - IT infrastructure, application deployment, server/network management, virtualization, cloud services, desktop architecture, Active Directory, security, service desk operations
+9. **General** - Uncategorized or ambiguous content
 
 ## Directory Structure
 
@@ -162,7 +165,77 @@ The system generates organized directory structures based on document categories
   │       ├── calibration/
   │       ├── metadata/
   │       └── reports/
+  ├── medical/
+  │   └── 2024-11-20/
+  │       ├── Medical_Applications/
+  │       ├── Medical_Interfaces/
+  │       ├── Clinical_Workflows/
+  │       └── Regulatory_Clinical/
+  ├── infrastructure/
+  │   └── 2024-11-20/
+  │       ├── Infrastructure/
+  │       ├── Application_Deployment/
+  │       ├── Domain_Administration/
+  │       ├── Security/
+  │       ├── Accounts_AD/
+  │       ├── Networking/
+  │       ├── Virtualization/
+  │       ├── Service_Desk/
+  │       ├── Field_Services/
+  │       └── Governance_And_Architecture/
   └── ...
+```
+
+### Detailed Hierarchical Structures
+
+For complex categories like IT infrastructure, the system supports detailed multi-level directory hierarchies:
+
+**Infrastructure/Desktop_Architecture_And_Engineering:**
+```
+Infrastructure/
+  Desktop_Architecture_And_Engineering/
+    Standards/
+      Windows_11_Build_Standards.md
+      Hardware_Standards.md
+      Naming_Conventions.md
+      OU_And_VLAN_Standards.md
+    Imaging_And_Provisioning/
+      SCCM_Task_Sequences.md
+      Intune_Enrollment.md
+      Driver_Management.md
+      Pre_And_Post_Install_Checklists.md
+    Application_Stacks/
+      TrackingBoard/
+        Overview.md
+        Pilot_PCs/
+        Runbooks/
+        Known_Issues/
+      Dragon_Dictation/
+        Overview.md
+        Citrix_Config.md
+        Local_Client_Config.md
+        Troubleshooting_Guide.md
+      Cerner_And_Clinical_Apps/
+        Cerner_Client_Config.md
+        Citrix_Profiles.md
+    Tools_And_Scripts/
+      PowerShell_Modules/
+      Packaging_Scripts/
+      Health_Check_Scripts/
+    Project_Specific/
+      MHN_Pilot_Tracking/
+      Windows_11_Migration/
+      Clinic_Rollouts/
+```
+
+Use `createDetailedStructure()` to generate these complex hierarchies:
+
+```javascript
+var detailedStructure = directoryManager.createDetailedStructure(
+  'infrastructure',
+  'Desktop_Architecture_And_Engineering',
+  { basePath: '/IT_Documentation' }
+);
 ```
 
 ## Configuration Options

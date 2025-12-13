@@ -68,6 +68,8 @@
         legal: ['contract', 'agreement', 'clause', 'law', 'regulation', 'compliance', 'terms'],
         educational: ['learn', 'teach', 'course', 'lesson', 'tutorial', 'guide', 'instruction'],
         sensor: ['sensor', 'measurement', 'temperature', 'humidity', 'box', 'sensebox', 'opensensemap'],
+        medical: ['patient', 'clinical', 'medical', 'healthcare', 'diagnosis', 'treatment', 'hospital', 'doctor', 'nurse', 'pharmacy', 'imaging', 'laboratory', 'hl7', 'fhir', 'ehr', 'emr', 'cerner', 'epic', 'medication', 'prescription', 'radiology', 'pacs', 'ris', 'cardiology', 'workflow', 'interface', 'quality', 'audit', 'hipaa'],
+        infrastructure: ['deployment', 'infrastructure', 'server', 'network', 'virtualization', 'vmware', 'cloud', 'kubernetes', 'docker', 'container', 'architecture', 'desktop', 'endpoint', 'sccm', 'intune', 'group policy', 'active directory', 'powershell', 'automation', 'citrix', 'vdi', 'datacenter', 'storage', 'backup', 'disaster recovery', 'monitoring', 'ansible', 'terraform', 'devops', 'cicd', 'jenkins', 'azure', 'aws', 'patch', 'update'],
         general: []
       };
 

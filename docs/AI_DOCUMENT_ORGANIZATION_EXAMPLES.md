@@ -299,6 +299,100 @@ This file contains practical examples demonstrating how to use the AI Document O
         console.log('Generated path for ' + doc.name + ':', path);
       });
     };
+
+    vm.createDetailedStructure = function() {
+      // Create detailed hierarchical structure for IT infrastructure
+      var detailedStructure = directoryManager.createDetailedStructure(
+        'infrastructure', 
+        'Desktop_Architecture_And_Engineering',
+        { basePath: '/IT_Documentation' }
+      );
+
+      console.log('Detailed Infrastructure Structure:');
+      console.log('Base Path:', detailedStructure.basePath);
+      console.log('Category Path:', detailedStructure.categoryPath);
+      console.log('Hierarchy:', JSON.stringify(detailedStructure.hierarchy, null, 2));
+
+      // Create detailed structure for medical category
+      var medicalStructure = directoryManager.createDetailedStructure(
+        'medical',
+        null,
+        { basePath: '/Healthcare_Documents' }
+      );
+
+      console.log('\nMedical Structure:');
+      console.log('Hierarchy:', JSON.stringify(medicalStructure.hierarchy, null, 2));
+    };
+  }
+})();
+```
+
+## Example 4: IT Infrastructure Document Organization
+
+```javascript
+(function() {
+  'use strict';
+
+  angular
+    .module('openSenseMapApp')
+    .controller('ITInfrastructureExample', ITInfrastructureExample);
+
+  ITInfrastructureExample.$inject = ['documentOrganizer', 'directoryManager'];
+
+  function ITInfrastructureExample(documentOrganizer, directoryManager) {
+    var vm = this;
+
+    vm.organizeITDocuments = function() {
+      // Example IT infrastructure documents
+      var itDocuments = [
+        {
+          name: 'Windows_11_Migration_Plan',
+          content: 'Desktop architecture deployment infrastructure SCCM Intune Windows 11 imaging provisioning task sequences enrollment standards.',
+          type: 'project_plan'
+        },
+        {
+          name: 'Cerner_Client_Configuration',
+          content: 'Medical Cerner clinical application Citrix healthcare patient EHR Dragon Dictation configuration profiles.',
+          type: 'configuration'
+        },
+        {
+          name: 'PowerShell_Automation_Scripts',
+          content: 'PowerShell automation deployment scripts infrastructure Active Directory Group Policy packaging health checks.',
+          type: 'scripts'
+        }
+      ];
+
+      console.log('Organizing IT Infrastructure Documents...\n');
+
+      itDocuments.forEach(function(doc) {
+        var result = documentOrganizer.organizeDocument(doc);
+
+        if (result.success) {
+          console.log('✓ Document:', doc.name);
+          console.log('  Category:', result.analysis.classification.category);
+          console.log('  Confidence:', (result.analysis.classification.confidence * 100).toFixed(1) + '%');
+          console.log('  Target Path:', result.targetPath);
+          console.log('  Top Keywords:', result.analysis.keywords.slice(0, 3).map(function(k) {
+            return k.word;
+          }).join(', '));
+          console.log('');
+        }
+      });
+
+      // Create detailed directory structure
+      console.log('\nCreating Detailed Infrastructure Structure...');
+      var detailedStructure = directoryManager.createDetailedStructure(
+        'infrastructure',
+        'Desktop_Architecture_And_Engineering'
+      );
+
+      console.log('Structure includes:');
+      console.log('- Standards (Windows 11, Hardware, Naming Conventions, OU/VLAN)');
+      console.log('- Imaging & Provisioning (SCCM, Intune, Drivers, Checklists)');
+      console.log('- Application Stacks (TrackingBoard, Dragon, Cerner)');
+      console.log('- Tools & Scripts (PowerShell, Packaging, Health Checks)');
+      console.log('- Project Specific (MHN Pilot, Windows 11 Migration, Clinic Rollouts)');
+    };
   }
 })();
 ```

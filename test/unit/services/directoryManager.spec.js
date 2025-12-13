@@ -74,6 +74,38 @@
       });
     });
 
+    describe('createDetailedStructure', function () {
+      it('should create detailed hierarchical structure for infrastructure', function () {
+        var result = directoryManager.createDetailedStructure('infrastructure', 'Desktop_Architecture_And_Engineering');
+
+        expect(result).to.be.an('object');
+        expect(result).to.have.property('basePath');
+        expect(result).to.have.property('categoryPath');
+        expect(result).to.have.property('hierarchy');
+        expect(result).to.have.property('created');
+      });
+
+      it('should create hierarchy for all subcategories when no subcategory specified', function () {
+        var result = directoryManager.createDetailedStructure('infrastructure');
+
+        expect(result.hierarchy).to.be.an('object');
+        expect(result.hierarchy).to.have.property('Desktop_Architecture_And_Engineering');
+      });
+
+      it('should fall back to basic structure for categories without detailed templates', function () {
+        var result = directoryManager.createDetailedStructure('technical');
+
+        expect(result).to.have.property('subdirectories');
+        expect(result.subdirectories).to.be.an('array');
+      });
+
+      it('should throw error for invalid category', function () {
+        expect(function () {
+          directoryManager.createDetailedStructure();
+        }).to.throw('Invalid category: category must be a non-empty string');
+      });
+    });
+
     describe('validatePath', function () {
       it('should validate correct paths', function () {
         var result = directoryManager.validatePath('/documents/technical/2024/file.txt');
