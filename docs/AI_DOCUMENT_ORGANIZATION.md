@@ -137,9 +137,11 @@ The system classifies documents into the following categories:
 4. **Legal** - Contracts, agreements, compliance, regulations
 5. **Educational** - Courses, tutorials, guides, lessons, instructions
 6. **Sensor** - Sensor data, measurements, senseBox, openSenseMap
-7. **Medical** - Healthcare, clinical workflows, patient records, medical applications, HL7/FHIR interfaces, pharmacy systems, imaging (PACS/RIS), regulatory compliance
-8. **Infrastructure** - IT infrastructure, application deployment, server/network management, virtualization, cloud services, desktop architecture, Active Directory, security, service desk operations
+7. **Medical** - Healthcare applications (Cerner PowerChart/MPages, Dragon Dictation, PACS/RIS, Pharmacy), medical interfaces (HL7, FHIR, Rhapsody/Cloverleaf/Mirth), clinical workflows, regulatory/clinical (Joint Commission, CMS)
+8. **Infrastructure** - IT infrastructure (networking, servers, storage, virtualization), field techs, application deployment (SCCM/Intune), domain administration, service desk, security, desktop architecture with detailed project tracking
 9. **General** - Uncategorized or ambiguous content
+
+> **Note**: See [DIRECTORY_STRUCTURE_VISUALIZATION.md](DIRECTORY_STRUCTURE_VISUALIZATION.md) for complete hierarchical structures with all subdirectories.
 
 ## Directory Structure
 

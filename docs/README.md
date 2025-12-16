@@ -80,6 +80,7 @@ documentOrganizer.getOrganizationStats()
 ### Documentation
 - `docs/AI_DOCUMENT_ORGANIZATION.md` - Complete documentation
 - `docs/AI_DOCUMENT_ORGANIZATION_EXAMPLES.md` - Usage examples
+- `docs/DIRECTORY_STRUCTURE_VISUALIZATION.md` - **Visual directory structure diagrams** (PDF-ready, OneNote/SharePoint compatible)
 - `docs/README.md` - This file
 
 ## Testing

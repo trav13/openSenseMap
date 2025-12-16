@@ -38,94 +38,110 @@
     // Detailed hierarchical structure templates for complex categories
     var detailedStructures = {
       infrastructure: {
-        'Desktop_Architecture_And_Engineering': {
-          'Standards': ['Windows_11_Build_Standards.md', 'Hardware_Standards.md', 'Naming_Conventions.md', 'OU_And_VLAN_Standards.md'],
-          'Imaging_And_Provisioning': ['SCCM_Task_Sequences.md', 'Intune_Enrollment.md', 'Driver_Management.md', 'Pre_And_Post_Install_Checklists.md'],
-          'Application_Stacks': {
-            'TrackingBoard': ['Overview.md', 'Pilot_PCs', 'Runbooks', 'Known_Issues'],
-            'Dragon_Dictation': ['Overview.md', 'Citrix_Config.md', 'Local_Client_Config.md', 'Troubleshooting_Guide.md'],
-            'Cerner_And_Clinical_Apps': ['Cerner_Client_Config.md', 'Citrix_Profiles.md']
-          },
-          'Tools_And_Scripts': ['PowerShell_Modules', 'Packaging_Scripts', 'Health_Check_Scripts'],
-          'Project_Specific': ['MHN_Pilot_Tracking', 'Windows_11_Migration', 'Clinic_Rollouts']
+        'Infrastructure': {
+          'Networking': [],
+          'Servers': [],
+          'Storage': [],
+          'Virtualization': [],
+          'Monitoring': []
+        },
+        'Field_Techs': {
+          'Deployment_Runbooks': [],
+          'Break_Fix': [],
+          'Site_Checklists': [],
+          'Escalation_Paths': []
         },
         'Application_Deployment': {
-          'SCCM': ['Collections_And_Boundaries.md', 'Application_Packaging_Guide.md', 'Deployment_Types.md', 'Maintenance_Windows.md', 'Reporting.md'],
-          'Intune': ['Enrollment_Profiles.md', 'Configuration_Profiles.md', 'Compliance_Policies.md', 'App_Assignments.md'],
-          'Shared_Deployment_Standards': ['Packaging_Standards.md', 'Change_Control_Process.md', 'Rollback_Procedures.md'],
-          'ServiceNow_Integration': ['SN_Change_Automation.md', 'SN_Incident_Auto_Creation_For_Deployments.md', 'SN_Catalog_Items_For_Software_Requests.md']
+          'SCCM': [],
+          'Intune': [],
+          'Packaging_Standards': [],
+          'Testing_Pilots': []
         },
-        'Domain_Administration': {
-          'AD_Structure': ['Forest_And_Domains.md', 'OU_Design.md', 'Group_Policy_Model.md'],
-          'Group_Policy': ['Baseline_GPOs.md', 'Security_GPOs.md', 'Desktop_GPOs.md'],
-          'Access_Control': ['Admin_Groups.md', 'Service_Accounts.md', 'Tiering_Model.md']
-        },
-        'Security': {
-          'Security_Standards': [],
-          'Endpoint_Security': [],
-          'Incident_Response': [],
-          'Vulnerability_Management': []
-        },
-        'Accounts_AD': {
-          'User_Provisioning': [],
-          'Role_Definitions': [],
-          'Naming_Conventions': [],
-          'Termination_Procedures': []
-        },
-        'Networking': {
-          'WAN_LAN_WiFi': [],
-          'VLAN_Design': [],
-          'IP_Addressing': [],
-          'Firewall_Rulesets': [],
-          'VPN_Remote_Access': []
-        },
-        'Virtualization': {
-          'Hypervisor_Standards': [],
-          'Cluster_Layouts': [],
-          'VM_Provisioning': [],
-          'Templates_And_Golden_Images': [],
-          'Monitoring_And_Capacity': []
+        'Domain_Admins': {
+          'Active_Directory': [],
+          'GPO': [],
+          'OU_Standards': [],
+          'Identity_Lifecycle': []
         },
         'Service_Desk': {
-          'Tier1_Procedures': [],
-          'Triage_Checklists': [],
-          'Escalation_Paths': [],
-          'Knowledge_Base_Entry_Guidelines': []
+          'Tier1_Runbooks': [],
+          'Known_Issues': [],
+          'KB_Articles': []
         },
-        'Field_Services': {
-          'CHH_Field_Techs': ['Site_Maps_And_Locations.md', 'Device_Standards', 'Quick_Runbooks'],
-          'SMC_Field_Techs': ['Site_Maps_And_Locations.md', 'Device_Standards', 'Quick_Runbooks'],
-          'Rivers_Field_Techs': ['Site_Maps_And_Locations.md', 'Device_Standards', 'Quick_Runbooks'],
-          'MarshallHealth_Clinics_Field_Techs': ['Site_Maps_And_Locations.md', 'Device_Standards', 'Quick_Runbooks']
+        'Security': {
+          'Endpoint_Security': [],
+          'Encryption': [],
+          'Compliance': [],
+          'Incident_Response': []
         },
-        'Governance_And_Architecture': {
-          'Cross_Team_Diagrams': [],
-          'End_To_End_Flows': ['TrackingBoard_End_To_End.md', 'Dragon_Dictation_End_To_End.md'],
-          'RACI_Charts': ['TrackingBoard_Telemetry_RACI.md', 'Dragon_Dictation_RACI.md']
+        'Desktop_Architecture': {
+          'Standards': [],
+          'Reference_Designs': [],
+          'Baselines': [],
+          'Projects': {
+            'Pilot_Tracking': [],
+            'TrackingBoards_BedReady': [],
+            'Windows_11_Imaging': [],
+            'Hardware_Standards': [],
+            'Networking_Standards': [],
+            'Virtualization_Igels': [],
+            'Docs_KB_Automation': []
+          }
         }
       },
       medical: {
         'Medical_Applications': {
-          'Cerner_Applications': [],
-          'Dragon_Dictation': [],
-          'Imaging_RIS_PACS': [],
-          'Pharmacy_Systems': [],
-          'Ancillary_Systems': []
+          'Cerner_Applications': {
+            'PowerChart': [],
+            'MPages': [],
+            'Orders_Management': [],
+            'Downtime_Procedures': []
+          },
+          'Dragon_Dictation': {
+            'Provider_Workflows': [],
+            'Clinical_Templates': [],
+            'Specialty_Profiles': [],
+            'Clinical_Troubleshooting': []
+          },
+          'Imaging_RIS_PACS': {
+            'PACS_Viewers': [],
+            'RIS_Workflows': [],
+            'Modality_Integration': [],
+            'Downtime': []
+          },
+          'Pharmacy_Systems': {
+            'Order_Verification': [],
+            'Dispensing': [],
+            'Interfaces': []
+          },
+          'Ancillary_Systems': {
+            'Lab': [],
+            'Cardiology': [],
+            'Respiratory': [],
+            'Therapy': []
+          }
         },
         'Medical_Interfaces': {
           'HL7_Interfaces': [],
           'FHIR_APIs': [],
-          'Integration_Engine': [],
+          'Integration_Engine': {
+            'Rhapsody': [],
+            'Cloverleaf': [],
+            'Mirth': []
+          },
           'Interface_Runbooks': []
         },
         'Clinical_Workflows': {
           'Order_Sets': [],
           'Documentation_Flows': [],
-          'Clinical_Decision_Support': []
+          'Clinical_Decision_Support': [],
+          'Downtime_Workflows': []
         },
         'Regulatory_Clinical': {
           'Quality_Reporting': [],
-          'Clinical_Audits': []
+          'Clinical_Audits': [],
+          'Joint_Commission': [],
+          'CMS_Metrics': []
         }
       }
     };
