@@ -58,6 +58,20 @@ To release a new version of the openSenseMap frontend do the following:
 
 * [AngularJS]
 
+## Features
+
+### AI Document Organization System
+
+The openSenseMap project now includes an AI-powered document organization system that automatically classifies and organizes documents based on content analysis. See the [AI Document Organization System documentation](docs/AI_DOCUMENT_ORGANIZATION.md) for more details.
+
+**Key capabilities:**
+- Automatic document classification into 9 categories (including medical and IT infrastructure)
+- Keyword extraction and language detection
+- Sentiment analysis
+- Secure path generation and validation
+- Batch processing support
+- Support for medical/healthcare and IT infrastructure documentation
+
 ## Organization
 
 ### Branches
